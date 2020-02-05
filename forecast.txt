@@ -1,6 +1,0 @@
-2019-05-22 13:47:57.767305 ==> Hoje, quarta-feira São Paulo, SP 26ºmáx 12ºmin Chuva: 0% • 0mm
-2019-05-22 13:49:32.732549 ==> Hoje, quarta-feira São Paulo, SP 26ºmáx 12ºmin Chuva: 0% • 0mm
-2019-05-27 13:50:48.010669 ==> Hoje, segunda-feira São Paulo, SP 26ºmáx 13ºmin Chuva: 0% • 0mm
-2019-05-27 13:51:02.456669 ==> Hoje, segunda-feira São Paulo, SP 26ºmáx 13ºmin Chuva: 0% • 0mm
-2019-11-13 19:29:30.223780 ==> Hoje, quarta-feira São Paulo, SP 28ºmáx 17ºmin Chuva: 71% • 10mm
-2020-01-24 07:17:42.186109 ==> Hoje, sexta-feira São Paulo, SP 25ºmáx 17ºmin Chuva: 80% • 15mm
