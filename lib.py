@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup as bs
 def get_forecast_info():
     URL = 'https://g1.globo.com/previsao-do-tempo/sp/sao-paulo.ghtml'
     PAGE = urlopen(URL)
-    PARSE = bs(PAGE,'html.parser')
+    PARSE = bs(PAGE, 'html.parser')
     
     tag_date = PARSE.find('p', attrs = {'class' : 'forecast-header__date'})
     tag_place = PARSE.find('p', attrs = {'class' : 'forecast-header__place'})
@@ -46,5 +46,3 @@ def get_todays_emmissary():
     message += '{} => {} \n'.format(wqheader[9].text, wqtimers[3].text.strip())
 
     return(message)
-
-
