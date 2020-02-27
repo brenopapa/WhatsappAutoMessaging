@@ -1,0 +1,4 @@
+tirar mensagem e target do arquivo, colocar em um txt para leitura
+colocar no txt de leitura o caminho dos arquivos ou deixar automatico via OS
+chromedriver auto download
+colocar no git

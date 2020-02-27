@@ -1,6 +1,10 @@
-from datetime import datetime
 from urllib.request import urlopen
 from bs4 import BeautifulSoup as bs
+from selenium import webdriver    
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 
 def get_forecast_info():
     URL = 'https://g1.globo.com/previsao-do-tempo/sp/sao-paulo.ghtml'
@@ -21,15 +25,6 @@ def get_forecast_info():
     
     message = ' {} \n {} \n Max: {} \n Min: {} \n Chuva: {} \n'.format(date, place, Max, Min, rain)
     
-    #with open("forecast.txt", "a") as f:
-    #    Time = str(datetime.today())
-    #    f.write(Time + " ==> ")
-    #    f.write(date + " ")
-    #    f.write(place + " ")
-    #    f.write(Max + " ")
-    #    f.write(Min + " ")
-    #    f.write("Chuva: " + rain + "\n")
-    #    print("Informações escritas no arquivo forecast.txt")
     return(message)
 
 def get_todays_emmissary():
@@ -46,3 +41,17 @@ def get_todays_emmissary():
     message += '{} => {} \n'.format(wqheader[9].text, wqtimers[3].text.strip())
 
     return(message)
+
+def send_message(message_target, message):
+    options = webdriver.ChromeOptions();
+    options.add_argument('--user-data-dir=C:/Users/breno.zipoli/Desktop/Python/WhatsappAutoMessaging/data/User_Data')
+    driver = webdriver.Chrome(executable_path="C:/Users/breno.zipoli/Desktop/Python/WhatsappAutoMessaging/data/chromedriver.exe", options=options)
+    driver.get('https://web.whatsapp.com/')   
+    chat_title = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, "//span[@title='" + message_target + "']")))
+    chat_title.click()
+    input_box = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//div[@data-tab='1'][@dir='ltr']")))
+    input_box.click()
+    input_box.send_keys(message + Keys.ENTER)
+    
+    driver.WebDriverWait(driver, 5)
+    driver.quit()
