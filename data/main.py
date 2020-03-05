@@ -4,7 +4,15 @@ import lib
 #   - get_todays_emmissary()
 #   - send_message(message_target, message)
 
-message_target = "Família Papa"
-message = "Bom dia familia"
+print("##################################################")
+print("#                Enviar mensagem ?               #")
+print("##################################################")
+option = input(" Responda S ou N: ")
 
-lib.send_message(message_target, message)
+if(option.upper() == "S"):
+	message_target = "Família Papa"
+	message = "Bom dia familia"
+
+	lib.send_message(message_target, message)
+else:
+	print("Rotina Cancelada!")

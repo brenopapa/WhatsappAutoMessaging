@@ -8,3 +8,4 @@ import os
 #
 #installing necessary libraries
 os.system("pip install requests selenium")
+os.system("cls")
